@@ -1,0 +1,44 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+#content {
+    width: 944px;
+    height: 561px;
+    /*margin: 0 auto;*/
+    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+canvas { 
+    border: 0;
+    display: block;
+    /*box-shadow: 0px 0px 40px #111;*/
+}
+
+.bold {
+    font-weight: bold;
+}
+.right {
+    float: right;
+}
+.left {
+    float: left;
+}
+.align-right {
+    text-align: right;
+}
+.align-left {
+    text-align: left;
+}
+.align-center {
+    text-align: center;
+}

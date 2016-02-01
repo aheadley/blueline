@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    
+    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="font/css/open-iconic.css">
+    
+    <title>Blueline</title>
+    
+    <script type="text/javascript" src="util.js"></script>
+    <script type="text/javascript" src="model/EventSource.js"></script>
+    <script type="text/javascript" src="model/Tile.js"></script>
+    <script type="text/javascript" src="model/Game.js"></script>
+    <script type="text/javascript" src="model/StructureBase.js"></script>
+    <script type="text/javascript" src="model/Mine.js"></script>
+    <script type="text/javascript" src="model/Storage.js"></script>
+    <script type="text/javascript" src="model/Laboratory.js"></script>
+    <script type="text/javascript" src="model/Generator.js"></script>
+    <script type="text/javascript" src="model/Research.js"></script>
+    
+    <script type="text/javascript" src="ui-util.js"></script>
+    <script type="text/javascript" src="view/AnimatedValue.js"></script>
+    <script type="text/javascript" src="view/InterfaceElement.js"></script>
+    <script type="text/javascript" src="view/Button.js"></script>
+    <script type="text/javascript" src="view/GameView.js"></script>
+    <script type="text/javascript" src="view/TileView.js"></script>
+    <script type="text/javascript" src="view/BuildMenu.js"></script>
+    <script type="text/javascript" src="view/ResearchMenu.js"></script>
+    <script type="text/javascript" src="view/InterfaceButtons.js"></script>
+</head>
+
+<script type="text/javascript">
+    "use strict";
+
+    function bluelineStart() {
+        var game = new Game(now());
+        var gameView = new GameView(game, document.getElementById("hexmap"));
+        
+        var draw = function() {
+            game.tick(now())
+            gameView.update();
+            gameView.draw();
+            window.requestAnimationFrame(draw);
+        }
+        
+        window.requestAnimationFrame(draw);
+    }
+</script>
+
+<body onload="bluelineStart();">
+    <div id="content">
+        <canvas id="hexmap" width="944" height="561"></canvas>
+    </div>
+</body>
+</html>
